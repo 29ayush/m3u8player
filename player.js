@@ -50,6 +50,12 @@ function playM3u8(url){
     video.classList.remove("native_mode");
     video.classList.add("zoomed_mode");
   }
+  var config = {
+  xhrSetup: function (xhr, url) {
+    xhr.setRequestHeader('Referer', 'http://www.ipldekho.xyz');
+  },
+};
+    
   if(hls){ hls.destroy(); }
   hls = new Hls({debug:debug});
   hls.on(Hls.Events.ERROR, function(event,data) {
