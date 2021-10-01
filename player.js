@@ -57,7 +57,7 @@ function playM3u8(url){
 };
     
   if(hls){ hls.destroy(); }
-  hls = new Hls({debug:debug});
+  hls = new Hls({config: config, debug:debug});
   hls.on(Hls.Events.ERROR, function(event,data) {
     var  msg = "Player error: " + data.type + " - " + data.details;
     console.error(msg);
